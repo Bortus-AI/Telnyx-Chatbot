@@ -1,6 +1,6 @@
 # Import necessary libraries
 import tkinter as tk
-from tkinter import simpledialog, messagebox, Menu, Label, OptionMenu, Frame, Button, Text, Scrollbar
+from tkinter import simpledialog, messagebox, Menu, Label, OptionMenu, Frame, Button, Text, Scrollbar, Scale
 from tkinter import END, DISABLED, NORMAL
 import requests
 import threading
@@ -24,11 +24,14 @@ class ChatApplication(tk.Tk):
         self.stop_event = threading.Event()  # Event to signal bot to stop
         self.bot_active = False  # Flag to indicate if bot is currently active
 
+        # Initialize new variables for max_tokens and temperature with their defaults
+        self.max_tokens = tk.IntVar(value=128)
+        self.temperature = tk.DoubleVar(value=0.9)
+
         # Setup the GUI components
         self.init_gui()
         # Load the API key if it exists
         self.load_api_key()
-
     def init_gui(self):
         # Create a menu bar
         self.menu_bar = Menu(self)
@@ -76,6 +79,24 @@ class ChatApplication(tk.Tk):
         # Add 'Send' button
         self.send_button = Button(button_frame, text="Send", command=self.on_send, width=10)
         self.send_button.pack(side=tk.RIGHT, padx=5, pady=5, fill='x', expand=True)
+
+        # Create a frame for advanced settings
+        advanced_settings_frame = Frame(self)
+        advanced_settings_frame.pack(side=tk.BOTTOM, fill='x', expand=True)
+
+        # Create a scale for max tokens with increased length
+        max_tokens_label = Label(advanced_settings_frame, text="Max Tokens:")
+        max_tokens_label.pack(side=tk.LEFT, padx=5, pady=5)
+        max_tokens_scale = Scale(advanced_settings_frame, from_=10, to=1024, orient=tk.HORIZONTAL, variable=self.max_tokens, length=200) # Increased length
+        max_tokens_scale.pack(side=tk.LEFT, padx=5, pady=5)
+
+        # Create a scale for temperature with increased length
+        temperature_scale = Scale(advanced_settings_frame, from_=0.0, to=1.0, resolution=0.01, orient=tk.HORIZONTAL, variable=self.temperature, length=200)  # Increased length
+        temperature_scale.pack(side=tk.RIGHT, padx=5, pady=5)
+        
+        # Pack the temperature label to the left of the temperature scale
+        temperature_label = Label(advanced_settings_frame, text="Temperature:")
+        temperature_label.pack(side=tk.RIGHT, padx=5, pady=5)
 
     def on_exit(self):
         # Clear the clipboard and close the application
@@ -163,7 +184,9 @@ class ChatApplication(tk.Tk):
         }
         data = {
             "text": [text],
-            "model": self.model.get()
+            "model": self.model.get(),
+            "max_tokens": self.max_tokens.get(),  # Add max_tokens to the request
+            "temperature": self.temperature.get()  # Add temperature to the request
         }
         try:
             with requests.post(API_URL, headers=headers, json=data, stream=True) as response:
