@@ -2,6 +2,8 @@
 
 An interactive chat application with an AI backend using Telnyx API.
 
+![image](https://github.com/Bortus-AI/Telnyx-Chatbot/assets/100248124/4fef5766-2ba9-41d7-a366-4f2a6ef21bc2)
+
 ## Description
 
 This application is a simple chat interface that integrates with the Telnyx API to enable users to have conversations with an AI model. It is built using Python's Tkinter library for the GUI and uses threading to handle API requests without freezing the UI.
