@@ -2,7 +2,10 @@
 
 An interactive chat application with an AI backend using Telnyx API.
 
-![image](https://github.com/Bortus-AI/Telnyx-Chatbot/assets/100248124/4fef5766-2ba9-41d7-a366-4f2a6ef21bc2)
+<img width="600" img height="520" alt="image" src="https://github.com/Bortus-AI/Telnyx-Chatbot/assets/100248124/b566715a-71d5-47b2-8737-c2ea75c6fc55">
+
+
+
 
 ## Description
 
