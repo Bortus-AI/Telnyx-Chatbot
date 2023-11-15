@@ -34,7 +34,6 @@ To set up the application, you must have Python and `pip` installed. Follow thes
 
 ```bash
 pip install requests cryptography
-pip install requests requests
 ```
 
 ## Usage
