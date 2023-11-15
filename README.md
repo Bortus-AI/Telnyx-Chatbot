@@ -1,69 +1,69 @@
 # Telnyx Chat Interface
 
-An interactive chat application with an AI backend using Telnyx API.
+An interactive chat application that allows conversations with AI models, utilizing the Telnyx API and supporting OpenAI models.
 
-<img width="600" img height="520" alt="image" src="https://github.com/Bortus-AI/Telnyx-Chatbot/assets/100248124/b566715a-71d5-47b2-8737-c2ea75c6fc55">
+<img width="800" img height="600" alt="Chat Application Interface" src="https://github.com/Bortus-AI/Telnyx-Chatbot/assets/100248124/b566715a-71d5-47b2-8737-c2ea75c6fc55">
 
 ## Description
 
-This application is a simple chat interface that integrates with the Telnyx API and now also supports OpenAI models. It enables users to have conversations with various AI models. The app is built using Python's Tkinter library for the GUI and uses threading to handle API requests without freezing the UI.
+The Telnyx Chat Interface is a graphical chat application designed to interact with multiple AI models through the Telnyx API. It provides a user-friendly environment for real-time chatting with AI entities. The application is developed using Python's Tkinter library for the graphical user interface and incorporates threading to manage API requests asynchronously, ensuring a responsive user experience.
 
 ### Features
 
-- Set and store API keys securely for both Telnyx and OpenAI.
-- Choose between multiple AI models including OpenAI's latest offerings.
-- Interactive chat interface with history viewing.
-- Send messages to AI and view responses in real-time.
-- Stop AI responses at any time.
+- Securely save and configure API keys for Telnyx and OpenAI within the application.
+- Select from a variety of AI models, including the latest ones from OpenAI.
+- Engage in an interactive chat experience with a viewable message history.
+- Real-time messaging and response display from AI models.
+- Capability to interrupt the AI's responses at any given time.
 
 ## AI Models
 
-The application now supports a range of AI models, including those from OpenAI. Here are the available models:
+The application supports a diverse array of AI models, which now includes OpenAI's models, providing users with a broad range of conversational abilities:
 
-- `meta-llama/Llama-2-13b-chat-hf` - A capable and general-purpose chat model.
-- `mistralai/Mistral-7B-Instruct-v0.1` - A model fine-tuned for following instructions.
-- `Trelis/Llama-2-7b-chat-hf-function-calling-v2` - A specialized model that can call functions.
-- `openai/gpt-3.5-turbo` - OpenAI's versatile and efficient language model.
-- `openai/gpt-3.5-turbo-16k` - An extended version of GPT-3.5 Turbo for longer context.
-- `openai/gpt-4` - The latest and most advanced AI model from OpenAI.
-- `openai/gpt-4-32k` - A variant of GPT-4 with an extended token limit.
+- `meta-llama/Llama-2-13b-chat-hf` - A general-purpose chat model.
+- `mistralai/Mistral-7B-Instruct-v0.1` - A model tuned for instruction-based interactions.
+- `Trelis/Llama-2-7b-chat-hf-function-calling-v2` - A model with the capability to call functions.
+- `openai/gpt-3.5-turbo` - OpenAI's efficient language model suitable for a variety of tasks.
+- `openai/gpt-3.5-turbo-16k` - An extended context version of GPT-3.5 Turbo.
+- `openai/gpt-4` - OpenAI's state-of-the-art AI model.
+- `openai/gpt-4-32k` - A GPT-4 variant designed for handling extended token limits.
 
 ## Installation
 
-Before running the application, ensure Python and `pip` are installed on your system. Then, install the required dependencies:
+To set up the application, you must have Python and `pip` installed. Follow these steps to install the necessary dependencies:
 
 ```bash
-pip install requests
+pip install requests cryptography
 ```
 
 ## Usage
 
-To run the AI Chat Interface, execute:
+To start the application, run the following command:
 
 ```bash
 python telnyx_chat.py
 ```
 
-Ensure you have the `api_key.txt` file in the same directory as the script or set the API key through the interface for both Telnyx and OpenAI.
+Make sure to place the `api_keys.txt` file in the same directory as the script or set the API keys through the application interface for both Telnyx and OpenAI.
 
-### Setting the API Key
+### Setting the API Keys
 
-1. Go to 'File' > 'Set API Key'.
-2. Enter your Telnyx and OpenAI API keys in the prompt.
-3. The keys will be saved for future sessions.
+1. Navigate to 'File' > 'Set Telnyx/OpenAI API Key'.
+2. Enter your respective API keys when prompted.
+3. The application will store the keys for subsequent use.
 
 ## Configuration
 
-You can choose the AI model by selecting it from the dropdown menu before sending a message.
+The AI model can be selected from the dropdown menu within the application before initiating a conversation.
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and create a pull request with your changes or improvements.
+If you're interested in contributing, fork the repository and submit a pull request with your proposed changes.
 
 ## License
 
-This project is open-source and available under the [License](LICENSE).
+This project is released as open-source under the [MIT License](LICENSE).
 
 ## Disclaimer
 
-This application is intended for educational purposes only. Usage of the Telnyx and OpenAI APIs is subject to their respective terms of service.
+This software is for educational purposes only. Be sure to adhere to the terms of service for Telnyx and OpenAI when using their APIs.
